@@ -31,7 +31,7 @@ if (Meteor.isServer) {
     //     device: Match.Optional(String)
     //   }
     this.route('GeolocationBGRoute', {
-      path: 'api/geolocation',
+      path: '/api/geolocation',
       where: 'server',
       action: function() {
         // GET, POST, PUT, DELETE

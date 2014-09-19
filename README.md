@@ -33,4 +33,14 @@ meteor run android-device -p 192.168.0.25:3000
 
 *(change the IP address to whatever your development machine's IP is, you can also try with ios)*
 
+## Testing the REST(ish) handling
+
+At the bottom of `app.js` you configure the URL to which we post the REST for
+background Geolocation data.
+
+You can test this with curl, you don't even have to fire up Cordova.
+
+```
+curl -v -H "Content-Type: application/json" -X PUT --data '{"location":{"coords":{"longitude":123.333,"latitude":123.555,"speed":0,"accuracy":0}},"uuid":"curl","userId":"curltest1","device":"test"}' 'http://localhost:3000/api/geoloaction'
+```
 
