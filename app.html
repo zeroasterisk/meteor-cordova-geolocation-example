@@ -1,0 +1,59 @@
+<head>
+  <title>Meteor-Cordova-Background-Geolocation-Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+
+<body>
+</body>
+
+<template name="masterLayout">
+  <div class="container">
+    {{> yield}}
+  </div>
+  <div class="container">
+    <footer>
+    {{> footer}}
+    </footer>
+  </div>
+</template>
+
+<template name="footer">
+  <small>
+    Geolocation Example
+    {{> loginButtons}}
+    <button class="btn btn-primary" id="getNow">Get Now</button>
+    <button class="btn btn-primary" id="getBackground">Start Background</button>
+    <span id="btnFeedback" class="muted">&nbsp;</span>
+  </small>
+</template>
+
+<template name="geolog">
+<h1>Geolocation Example</h1>
+
+<table class="table table-condensed table-striped table-bordered">
+  <tbody>
+    <tr>
+      <th class="text-right">longitude</th>
+      <th class="text-right">latitude</th>
+      <th class="text-right">speed</th>
+      <th class="text-right">accuracy</th>
+      <th>device</th>
+      <th>uuid</th>
+      <th>timestamp</th>
+    </tr>
+    {{#each geologs}}
+      <tr>
+        <td class="text-right">{{location.longitude}}&nbsp;</td>
+        <td class="text-right">{{location.latitude}}&nbsp;</td>
+        <td class="text-right">{{location.speed}}&nbsp;</td>
+        <td class="text-right">{{location.accuracy}}&nbsp;</td>
+        <td>{{device}}&nbsp;</td>
+        <td>{{uuid}}&nbsp;</td>
+        <td>{{created}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
+</template>
