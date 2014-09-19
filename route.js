@@ -40,21 +40,23 @@ if (Meteor.isServer) {
         var requestData = this.request.body;
 
         // log stuff
-        //console.log('GeolocationBG post: ' + requestMethod);
-        //console.log(JSON.stringify(requestData));
+        console.log('GeolocationBG post: ' + requestMethod);
+        console.log(JSON.stringify(requestData));
 
         // TODO: security/validation
         //  require some security with data
         //  validate userId/uuid/etc (inside Meteor.call?)
 
         // Can insert into a Collection from the server (or whatever)
-        if (GeolocationLog.insert(requestData)) {
+        if (GeoLog.insert(requestData)) {
+          console.log('GeolocationBG inserted');
           this.response.writeHead(200, {'Content-Type': 'application/json'});
           this.response.end('ok');
           return;
         }
 
         // if we end up with an error case, you can return 500
+        console.log('GeolocationBG failed to insert');
         this.response.writeHead(500, {'Content-Type': 'application/json'});
         this.response.end('failure');
       }
