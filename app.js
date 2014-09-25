@@ -45,10 +45,6 @@ if (Meteor.isClient) {
         dest.innerHTML = 'Not Available, Not Cordova';
         return;
       }
-      if (!GeolocationBG.avail()) {
-        dest.innerHTML = 'ERROR: Not Available, is Cordova (should be available)';
-        return;
-      }
       if (!GeolocationBG.isStarted) {
         if (!GeolocationBG.start()) {
           dest.innerHTML = 'ERROR: Not Started, unable to start';

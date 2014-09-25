@@ -64,5 +64,5 @@ underscore@1.0.0
 url@1.0.0
 webapp-hashing@1.0.0
 webapp@1.1.1
-zeroasterisk:cordova-geolocation-background@0.0.2
+zeroasterisk:cordova-geolocation-background@0.0.4
 zeroasterisk:cordova-geolocation-foreground@0.0.2
