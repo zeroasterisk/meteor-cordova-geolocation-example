@@ -39,6 +39,7 @@
       <th class="text-right">accuracy</th>
       <th>device</th>
       <th>uuid</th>
+      <th>userId</th>
       <th>timestamp</th>
     </tr>
     {{#each geologs}}
@@ -49,7 +50,8 @@
         <td class="text-right">{{location.accuracy}}&nbsp;</td>
         <td>{{device}}&nbsp;</td>
         <td>{{uuid}}&nbsp;</td>
-        <td>{{created}}</td>
+        <td>{{userId}}&nbsp;</td>
+        <td>{{location.recorded_at}}</td>
       </tr>
     {{/each}}
   </tbody>
