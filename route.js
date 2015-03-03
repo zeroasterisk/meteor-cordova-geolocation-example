@@ -34,6 +34,14 @@ if (Meteor.isServer) {
       path: '/api/geolocation',
       where: 'server',
       action: function() {
+
+        this.response.setHeader("Access-Control-Allow-Origin", "*");
+        this.response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        if (this.request.method == 'OPTIONS') {
+          this.response.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, DELETE, OPTIONS");
+          this.response.end("OPTIONS Response");
+        }
+
         // GET, POST, PUT, DELETE
         var requestMethod = this.request.method;
         // Data from a POST request

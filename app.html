@@ -22,8 +22,13 @@
     Geolocation Example
     {{> loginButtons}}
     <button class="btn btn-primary" id="getNow">Get Now</button>
-    <button class="btn btn-primary" id="getBackground">Start Background</button>
+    {{#if isCordova}}
+      <button class="btn btn-primary" id="getBackground">Start Background</button>
+    {{else}}
+      <em>(client not Cordova)</em>
+    {{/if}}
     <span id="btnFeedback" class="muted">&nbsp;</span>
+    <button class="btn btn-link" id="clear">Clear</button>
   </small>
 </template>
 
