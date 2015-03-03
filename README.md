@@ -17,7 +17,13 @@ And the Cordova Plugins
 * http://plugins.cordova.io/#/package/org.apache.cordova.geolocation
 * http://plugins.cordova.io/#/package/com.romainstrock.cordova.background-geolocation
 
-## How to Run Yourself
+## What to Note:
+
+* See the client config in `app.js`
+* See the client start/stop in `app.js`
+* See the server REST API endpoint in `route.js`
+
+## How to Run Yourself: Locally
 
 NOTE: this example uses Meteor + Cordova, which downloads a LOT of extra stuff.
 You may first want to familiarize yourself with
@@ -32,6 +38,21 @@ meteor run android-device -p 192.168.0.25:3000
 ```
 
 *(change the IP address to whatever your development machine's IP is, you can also try with ios)*
+
+## How to Run on Device, against the example instance
+
+Or on your own subdomain:
+
+```
+meteor run android-device --mobile-server geolocationbackgroundexample.meteor.com --verbose
+```
+
+Or on your own subdomain:
+
+```
+meteor deploy <mysub>.meteor.com
+meteor run android-device --mobile-server <mysub>.meteor.com --verbose
+```
 
 ## Testing the REST(ish) handling
 
