@@ -4,11 +4,11 @@
 # but you can also edit it by hand.
 
 meteor-platform
-zeroasterisk:cordova-geolocation-background
 iron:router
-zeroasterisk:cordova-geolocation-foreground
 accounts-github
 accounts-ui
 insecure
 mdg:reload-on-resume
+zeroasterisk:cordova-geolocation-background
+zeroasterisk:cordova-geolocation-foreground
 
