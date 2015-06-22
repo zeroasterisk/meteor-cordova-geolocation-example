@@ -62,6 +62,6 @@ background Geolocation data.
 You can test this with curl, you don't even have to fire up Cordova.
 
 ```
-curl -v -H "Content-Type: application/json" -X PUT --data '{"device":"curl","location":{"longitude":"-85.70906639098872","recorded_at":"Thu Sep 25 01:07:35 EDT 2014","latitude":"38.258042335509145","speed":"0.0","accuracy":"181.94342"},"uuid":"curl","userId":null}' 'http://localhost:3000/api/geoloaction'
+curl -v -H "Content-Type: application/json" -X PUT --data '{"device":"curl","location":{"longitude":"-85.70906639098872","recorded_at":"Thu Sep 25 01:07:35 EDT 2014","latitude":"38.258042335509145","speed":"0.0","accuracy":"181.94342"},"uuid":"curl","userId":null}' 'http://localhost:3000/api/geolocation'
 ```
 
