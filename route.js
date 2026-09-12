@@ -47,13 +47,18 @@ if (Meteor.isServer) {
         // Data from a POST request
         var requestData = this.request.body;
 
+        // Require a shared API key so only authorized clients can post data
+        var apiKey = this.request.headers['x-api-key'];
+        if (!Meteor.settings.geolocationApiKey || apiKey !== Meteor.settings.geolocationApiKey) {
+          console.log('GeolocationBG unauthorized request');
+          this.response.writeHead(401, {'Content-Type': 'application/json'});
+          this.response.end('unauthorized');
+          return;
+        }
+
         // log stuff
         console.log('GeolocationBG post: ' + requestMethod);
         console.log(JSON.stringify(requestData));
-
-        // TODO: security/validation
-        //  require some security with data
-        //  validate userId/uuid/etc (inside Meteor.call?)
 
         // Can insert into a Collection from the server (or whatever)
         if (GeoLog.insert(requestData)) {
